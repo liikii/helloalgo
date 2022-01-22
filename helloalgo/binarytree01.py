@@ -47,3 +47,15 @@ class Node:
             r += [root.data]
             r += self.inorder_traversal(root.right)
         return r
+
+    def preorder_traversal(self, root):
+        #  root -> left -> right.
+        # recursion.
+        # TODO:
+        pass
+
+    def postorder_traversal(self, root):
+        #  root -> left -> right.
+        # recursion.
+        # TODO:
+        pass
