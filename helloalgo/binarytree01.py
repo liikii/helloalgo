@@ -36,3 +36,14 @@ class Node:
         else:
             # root
             self.data = Node(data)
+
+    def inorder_traversal(self, root):
+        # left -> root -> right.
+        # recursion.
+        r = []
+        if root:
+            # add left then add root , then add right.
+            r += self.inorder_traversal(root.left)
+            r += [root.data]
+            r += self.inorder_traversal(root.right)
+        return r
