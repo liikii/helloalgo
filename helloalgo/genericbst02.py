@@ -32,6 +32,7 @@ class BST:
     def insert(self, element):
         """
         from root find the place for inserting new node.
+        non-recursion.
         """
         current_node: BSTNode = self.root
         previous: Union[BSTNode, None] = None
@@ -41,9 +42,12 @@ class BST:
             if element < current_node.element:
                 current_node = current_node.left
                 direction = 0  # left
-            else:
+            elif element > current_node.element:
                 current_node = current_node.right
                 direction = 1  # right
+            else:
+                # element already in tree, do nothing.
+                return
         new_node = BSTNode(element)
         if self.root is None:
             self.root = new_node
@@ -51,6 +55,9 @@ class BST:
             previous.left = new_node
         else:
             previous.right = new_node
+
+    def recursive_insert(self, element):
+        pass
 
     def is_empty(self) -> bool:
         return self.root is None
@@ -65,6 +72,20 @@ class BST:
         pass
 
     def search(self, element):
+        """
+        non recursion.
+        """
+        current_node: BSTNode = self.root
+        while current_node is not None:
+            if current_node.element == element:
+                return current_node.element
+            elif current_node.element < element:
+                current_node = current_node.left
+            else:
+                current_node = current_node.right
+        return None
+
+    def recursive_search(self, element):
         pass
 
     def breadth_first(self):
