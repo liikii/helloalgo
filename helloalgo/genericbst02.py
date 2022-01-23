@@ -3,14 +3,15 @@
 generic binary search tree
 ======================================
 """
+from typing import Union
 
 
 class BSTNode:
     """
     Node
     """
-    def __init__(self):
-        self.element = None
+    def __init__(self, element):
+        self.element = element
         self.left = None
         self.right = None
 
@@ -33,17 +34,23 @@ class BST:
         from root find the place for inserting new node.
         """
         current_node: BSTNode = self.root
-        previous = None
+        previous: Union[BSTNode, None] = None
+        direction = 0
         while current_node is not None:
             previous = current_node
             if element < current_node.element:
                 current_node = current_node.left
+                direction = 0  # left
             else:
                 current_node = current_node.right
-
-        
-
-        pass
+                direction = 1  # right
+        new_node = BSTNode(element)
+        if self.root is None:
+            self.root = new_node
+        elif direction == 0:
+            previous.left = new_node
+        else:
+            previous.right = new_node
 
     def is_empty(self) -> bool:
         return self.root is None
