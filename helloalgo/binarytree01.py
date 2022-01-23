@@ -49,7 +49,7 @@ class Node:
         return r
 
     def preorder_traversal(self, root):
-        #  root -> left -> right.
+        # root -> left -> right.
         # recursion.
         # TODO:
         pass
