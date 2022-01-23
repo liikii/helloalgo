@@ -3,7 +3,7 @@
 generic binary search tree
 ======================================
 """
-from typing import Union, List
+from typing import Union
 from helloalgo.stack03 import Stack
 
 
