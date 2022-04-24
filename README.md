@@ -1,6 +1,10 @@
 ## 你好, 算法
 ## hello algorithms
 
+---
+
+### python3.8
+
 ### references:
 * data structures and algorithms in c++. 4th edition， adam drozdek.
 * data structures and algorithm analysis in c. 2nd edition, mark allen weiss.
