@@ -110,3 +110,39 @@ j.o.hendriksen
 类似对态优化
 ```
 
+
+
+#### binary tree
+```
+二叉树  数据分层结构， 优化搜索
+The formal recursive definition is: a binary tree is either empty (represented by a null pointer), or is made of a single node, where the left and right pointers (recursive definition ahead) each point to a binary tree.
+
+二叉树的实现， 数组把从上到下从左到右的对结构一维化。 
+通过类实现，用包含左右的指针实现。  
+```
+
+
+
+#### breadth-first traversal
+```
+递归访问， 访问自身， 访问左， 访问右。 从上到下， 从左到历
+递归实现， 注意栈空间。 
+```
+
+
+#### depth-first travelsal
+```
+递归到底， 然后反弹回来。 根据顺序分类， 前中后序。 
+递归实现用运行时栈， 非递归实现用用户栈。 效率不高。 
+反递归信息写到树里， 解决递归的问题。 
+```
+
+
+#### threaded trees
+```
+把递归的信息写到树里。 解决递归调用栈的问题。
+```
+
+
+
+
