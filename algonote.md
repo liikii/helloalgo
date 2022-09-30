@@ -209,9 +209,20 @@ insert 三种情况.
 #### self-adjusting tree
 ```
 树的平衡是不是目的, 目的是找到要找的元素. 
+自底向顶旋转
 ```
 
-#### 
+#### self-restructing tree
+```
+单一旋转:把子节点和他的父节点旋转
+转动到根部:重复单一旋转, 直到根部. 
+```
 
 
+#### splaying: splay tree 
+```
+A splay tree is a binary search tree with the additional property that recently accessed elements are quick to access again.
+尽管理论上, 自适应树与AVL树界限相当, 但试验表明, AVL树总是比自适应树好. 
+```
 
+#### heap
