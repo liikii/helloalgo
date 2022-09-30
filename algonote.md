@@ -145,4 +145,73 @@ The formal recursive definition is: a binary tree is either empty (represented b
 
 
 
+#### joseph m.morris algo
+```
+???
+通过树的转换进行遍历。 
+```
+
+
+#### binary tree insert delete
+```
+insert 类似search
+delete 分情况处理
+	is not in a tree;
+	is a leaf;
+	has only one child;
+	has two children.
+Deletion starategy is the following: replace the node being deleted with the largest node in the left subtree and then delete that largest node.
+
+If toDelete is not in the tree, there is nothing to delete. If toDelete node has only one child the procedure of deletion is identical to deleting a node from a linked list - we just bypass that node being deleted
+
+Deletion of an internal node with two children is less straightforward. If we delete such a node, we split a tree into two subtrees and therefore, some children of the internal node won't be accessible after deletion. In the picture below we delete 8:
+```
+
+
+#### tree balance
+```
+树不平衡， 没有意义
+最简单， 是重排， 取中间， 二分。 
+```
+
+
+#### DSW算法
+```
+把树变链表， 然后再就成平衡树。
+```
+
+
+
+#### AVL tree  (named after inventors Adelson-Velsky and Landis) 
+```
+insert: 
+四种情况， 两种不用处理． 其它两种处理．类似三种. 
+If the balance factor of any node in an AVL tree becomes less than –1 or greater 
+than 1, the tree has to be balanced. An AVL tree can become out of balance in four 
+situations, but only two of them need to be analyzed; the remaining two are symmetrical. The first case, the result of inserting a node in the right subtree of the right 
+child. 比如右节点的右节点加元素, 把父元素向上提, 
+The second case, the result of inserting a node in the left subtree of the right 
+child, is more complex. 先旋转成第一种情况, 再旋转.  
+```
+
+
+#### 2–3 tree
+```
+insert 三种情况. 
+* To insert into a 2-node
+* To insert into a 3-node:
+	* If the target node is a 3-node whose parent is a 2-node, the key is inserted into the 3-node to create a temporary 4-node. In the illustration, the key 10 is inserted into the 2-node with 6 and 9. The middle key is 9, and is promoted to the parent 2-node. This leaves a 3-node of 6 and 10, which is split to be two 2-nodes held as children of the parent 3-node.
+
+	* If the target node is a 3-node and the parent is a 3-node, a temporary 4-node is created then split as above. This process continues up the tree to the root. If the root must be split, then the process of a single 3-node is followed: a temporary 4-node root is split into three 2-nodes, one of which is considered to be the root. This operation grows the height of the tree by one. 
+```
+
+
+#### self-adjusting tree
+```
+树的平衡是不是目的, 目的是找到要找的元素. 
+```
+
+#### 
+
+
 
