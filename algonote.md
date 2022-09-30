@@ -293,4 +293,20 @@ insert 先以二叉插入元素, 然后依堆调整树结构.
 
 #### polish Notation and Expression Trees
 ```
+???
+```
+
+
+## multiway trees
+```
+a multiway tree of order m, or an m-way tree
+1. Each node has m children and m – 1 keys.
+2. The keys in each node are in ascending order.
+3. The keys in the first i children are smaller than the ith key.
+4. The keys in the last m – i children are larger than the ith ke
+```
+
+
+## b trees
+```
 ```
