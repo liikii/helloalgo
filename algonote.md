@@ -268,3 +268,29 @@ heapDequeue()
 ```
 数组实现堆, 最常用实现. 堆就是数组. 数据加堆算法. 
 ```
+
+
+#### treap
+```
+用随机堆因子, 使树不至于太失衡. 
+randomized binary search tree
+tree + heap
+ the treap and the randomized binary search tree are two closely related forms of binary search tree data structures that maintain a dynamic set of ordered keys and allow binary searches among the keys. After any sequence of insertions and deletions of keys, the shape of the tree is a random variable with the same probability distribution as a random binary tree; in particular, with high probability its height is proportional to the logarithm of the number of keys, so that each search, insertion, or deletion operation takes logarithmic time to perform.
+insert
+To insert a new key x into the treap, generate a random priority y for x. Binary search for x in the tree, and create a new node at the leaf position where the binary search determines a node for x should exist. Then, as long as x is not the root of the tree and has a larger priority number than its parent z, perform a tree rotation that reverses the parent-child relation between x and z.
+To delete a node x from the treap, if x is a leaf of the tree, simply remove it. If x has a single child z, remove x from the tree and make z be the child of the parent of x (or make z the root of the tree if x had no parent). Finally, if x has two children, swap its position in the tree with the position of its immediate successor z in the sorted order, resulting in one of the previous cases. In this final case, the swap may violate the heap-ordering property for z, so additional rotations may need to be performed to restore this property.
+insert 先以二叉插入元素, 然后依堆调整树结构. 
+```
+
+
+
+#### kd tree k-dimensional tree. 
+```
+把空间分隔. 
+以x轴分再用y用, 再用x分. 
+```
+
+
+#### polish Notation and Expression Trees
+```
+```
