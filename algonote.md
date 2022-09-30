@@ -226,3 +226,45 @@ A splay tree is a binary search tree with the additional property that recently 
 ```
 
 #### heap
+```
+Insert
+The new element is initially appended to the end of the heap (as the last element of the array). The heap property is repaired by comparing the added element with its parent and moving the added element up a level (swapping positions with the parent). This process is called "percolation up". The comparison is repeated until the parent is larger than or equal to the percolating element.
+先把元素插入到最后, 然后把元素推上去. 
+DeleteMin
+The minimum element can be found at the root, which is the first element of the array. We remove the root and replace it with the last element of the heap and then restore the heap property by percolating down. Similar to insertion, the worst-case runtime is O{log n).
+```
+
+
+
+#### heap sort 
+```
+The algorithm runs in two steps. Given an array of data, first, we build a heap and then turn it into a sorted list by calling deleteMin. The running time of the algorithm is O(n log n).
+把数组当在堆. 建最大堆. 把大元素移到最后, 剩下元素继续建最大堆. 重复. 
+```
+
+
+####  heaps as priority queues.
+```
+heaps insert:
+heapEnqueue(el)
+	put el at the end of heap;
+	while el is not in the root and el > parent(el)
+		swap el with its parent
+
+heap delete:
+heapDequeue()
+	extract the element from the root;
+	put the element from the last leaf in its place;
+	remove the last leaf;
+	// both subtrees of the root are heaps;
+	p = the root;
+	while p is not a leaf and p < any of its children
+		swap p with the larger child;
+```
+
+
+
+#### organizing array as heap
+```
+数组实现堆, 最常用实现. 堆就是数组. 数据加堆算法. 
+```
