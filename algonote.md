@@ -1,4 +1,4 @@
-#### singly linked list
+## singly linked list
 ```
 对比数组
 不用预定内存。 插入元素不需要像数组一样移动别的元素。 指针实现。 
@@ -6,19 +6,19 @@
 ```
 
 
-#### doubly linked list
+## doubly linked list
 ```
 有指向前和指向后的指针， 方法向前向后查找。 
 ```
 
 
-#### circular list
+## circular list
 ```
 头尾相连，循环检索
 ```
 
 
-#### skip list
+## skip list
 ```
 主要是优化排序链表的查找 
 如果是排好序的List, 无法使用二分查找。 引入跳跃指针。 
@@ -29,20 +29,20 @@ del的时候，依赖本元素的前后指针做改变。
 
 
 
-#### self-organizing list
+## self-organizing list
 ```
 优化链表查找， 动态元素前移（依赖一些特征）。 比如被查，
 ```
 
 
 
-#### sparse table
+## sparse table
 ```
 链表实现， 减少空间浪费
 ```
 
 
-#### stack
+## stack
 ```
 后进先出
 数组 链表实现
@@ -51,40 +51,40 @@ del的时候，依赖本元素的前后指针做改变。
 
 
 
-#### queues
+## queues
 ```
 数组实现， 用一个head, last指针。 
 链表实现。 
 ```
 
 
-#### priority queue
+## priority queue
 ```
 j.o.hendriksen
 链表加优先级指针实现
 ```
 
 
-#### recurion
+## recurion
 ```
 一个基， 基于基的后继产生方式
 ```
 
 
-#### tail recursion
+## tail recursion
 ```
 尾递归只是一个变形的循环。 可以用循环实现。 
 ```
 
 
 
-#### nontail recursion
+## nontail recursion
 ```
 非尾递归， 中间状态需要维护。
 ```
 
 
-#### indirect recursion
+## indirect recursion
 ```
 间接递归
 间接调用自身。 
@@ -92,19 +92,19 @@ j.o.hendriksen
 
 
 
-#### nested recursion
+## nested recursion
 ```
 ???
 ```
 
 
-#### excessive recursion
+## excessive recursion
 ```
 不合理递归 ， 如fib. 存在重复计算。 
 ```
 
 
-#### backtracking
+## backtracking
 ```
 八皇后问题
 类似对态优化
@@ -112,7 +112,7 @@ j.o.hendriksen
 
 
 
-#### binary tree
+## binary tree
 ```
 二叉树  数据分层结构， 优化搜索
 The formal recursive definition is: a binary tree is either empty (represented by a null pointer), or is made of a single node, where the left and right pointers (recursive definition ahead) each point to a binary tree.
@@ -123,14 +123,14 @@ The formal recursive definition is: a binary tree is either empty (represented b
 
 
 
-#### breadth-first traversal
+## breadth-first traversal
 ```
 递归访问， 访问自身， 访问左， 访问右。 从上到下， 从左到历
 递归实现， 注意栈空间。 
 ```
 
 
-#### depth-first travelsal
+## depth-first travelsal
 ```
 递归到底， 然后反弹回来。 根据顺序分类， 前中后序。 
 递归实现用运行时栈， 非递归实现用用户栈。 效率不高。 
@@ -138,21 +138,21 @@ The formal recursive definition is: a binary tree is either empty (represented b
 ```
 
 
-#### threaded trees
+## threaded trees
 ```
 把递归的信息写到树里。 解决递归调用栈的问题。
 ```
 
 
 
-#### joseph m.morris algo
+## joseph m.morris algo
 ```
 ???
 通过树的转换进行遍历。 
 ```
 
 
-#### binary tree insert delete
+## binary tree insert delete
 ```
 insert 类似search
 delete 分情况处理
@@ -168,21 +168,21 @@ Deletion of an internal node with two children is less straightforward. If we de
 ```
 
 
-#### tree balance
+## tree balance
 ```
 树不平衡， 没有意义
 最简单， 是重排， 取中间， 二分。 
 ```
 
 
-#### DSW算法
+## DSW算法
 ```
 把树变链表， 然后再就成平衡树。
 ```
 
 
 
-#### AVL tree  (named after inventors Adelson-Velsky and Landis) 
+## AVL tree  (named after inventors Adelson-Velsky and Landis) 
 ```
 insert: 
 四种情况， 两种不用处理． 其它两种处理．类似三种. 
@@ -195,7 +195,7 @@ child, is more complex. 先旋转成第一种情况, 再旋转.
 ```
 
 
-#### 2–3 tree
+## 2–3 tree
 ```
 insert 三种情况. 
 * To insert into a 2-node
@@ -206,26 +206,26 @@ insert 三种情况.
 ```
 
 
-#### self-adjusting tree
+## self-adjusting tree
 ```
 树的平衡是不是目的, 目的是找到要找的元素. 
 自底向顶旋转
 ```
 
-#### self-restructing tree
+## self-restructing tree
 ```
 单一旋转:把子节点和他的父节点旋转
 转动到根部:重复单一旋转, 直到根部. 
 ```
 
 
-#### splaying: splay tree 
+## splaying: splay tree 
 ```
 A splay tree is a binary search tree with the additional property that recently accessed elements are quick to access again.
 尽管理论上, 自适应树与AVL树界限相当, 但试验表明, AVL树总是比自适应树好. 
 ```
 
-#### heap
+## heap
 ```
 Insert
 The new element is initially appended to the end of the heap (as the last element of the array). The heap property is repaired by comparing the added element with its parent and moving the added element up a level (swapping positions with the parent). This process is called "percolation up". The comparison is repeated until the parent is larger than or equal to the percolating element.
@@ -236,14 +236,14 @@ The minimum element can be found at the root, which is the first element of the 
 
 
 
-#### heap sort 
+## heap sort 
 ```
 The algorithm runs in two steps. Given an array of data, first, we build a heap and then turn it into a sorted list by calling deleteMin. The running time of the algorithm is O(n log n).
 把数组当在堆. 建最大堆. 把大元素移到最后, 剩下元素继续建最大堆. 重复. 
 ```
 
 
-####  heaps as priority queues.
+##  heaps as priority queues.
 ```
 heaps insert:
 heapEnqueue(el)
@@ -264,13 +264,13 @@ heapDequeue()
 
 
 
-#### organizing array as heap
+## organizing array as heap
 ```
 数组实现堆, 最常用实现. 堆就是数组. 数据加堆算法. 
 ```
 
 
-#### treap
+## treap
 ```
 用随机堆因子, 使树不至于太失衡. 
 randomized binary search tree
@@ -284,20 +284,20 @@ insert 先以二叉插入元素, 然后依堆调整树结构.
 
 
 
-#### kd tree k-dimensional tree. 
+## kd tree k-dimensional tree. 
 ```
 把空间分隔. 
 以x轴分再用y用, 再用x分. 
 ```
 
 
-#### polish Notation and Expression Trees
+## polish Notation and Expression Trees
 ```
 ???
 ```
 
 
-## multiway trees
+# multiway trees
 ```
 a multiway tree of order m, or an m-way tree
 1. Each node has m children and m – 1 keys.
