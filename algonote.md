@@ -373,5 +373,10 @@ A very interesting approach is, in a sense, taking to the extreme the prefix B+-
 
 ## R树
 ```
-
+R: rectangle
+从叶子节点开始， 把空间柜起来。 
+最小边界矩形
+minimal bounding rectangle.
 ```
+
+
