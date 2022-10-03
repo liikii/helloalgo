@@ -309,4 +309,69 @@ a multiway tree of order m, or an m-way tree
 
 ## b trees
 ```
+一是解决磁盘问题
+B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree generalizes the binary search tree, allowing for nodes with more than two children. Unlike other self-balancing binary search trees, the B-tree is well suited for storage systems that read and write relatively large blocks of data, such as databases and file systems.
+
+Bayer and McCreight never explained what, if anything, the B stands for: Boeing, balanced, broad, bushy, and Bayer have been suggested. McCreight has said that "the more you think about what the B in B-trees means, the better you understand B-trees."
+
+
+definition
+* Every node has at most m children.
+* Every internal node has at least ⌈m/2⌉ children.
+* Every non-leaf node has at least two children.
+* All leaves appear on the same level and carry no information.
+* A non-leaf node with k children contains k−1 keys.
+
+
+Insertion and deletion from a B-tree are more complicated; in fact, they are notoriously difficult to implement correctly. For insertion, we first find the appropriate leaf node into which the inserted element falls (assuming it is not already in the tree). If there is already room in the node, the new element can be inserted simply. Otherwise the current leaf is already full and must be split into two leaves, one of which acquires the new element. The parent is then updated to contain a new key and child pointer. If the parent is already full, the process ripples upwards, eventually possibly reaching the root. If the root is split into two, then a new root is created with just two children, increasing the height of the tree by one.
+
+definition:
+Every path from the root to a leaf has the same length
+If a node has n children, it contains n−1 keys.
+Every node (except the root) is at least half full
+The elements stored in a given subtree all have keys that are between the keys in the parent node on either side of the subtree pointer. (This generalizes the BST invariant.)
+The root has at least two children if it is not a leaf.
+```
+
+
+## b* tree
+```
+减少分层, 节点必须2/3满. 
+```
+
+
+## b+ tree
+```
+只有叶结点有数据的引用. 
+A B+ tree can be viewed as a B-tree in which each node contains only keys (not key–value pairs), and to which an additional level is added at the bottom with linked leaves.
+
+The primary value of a B+ tree is in storing data for efficient retrieval in a block-oriented storage context — in particular, filesystems. This is primarily because unlike binary search trees, B+ trees have very high fanout (number of pointers to child nodes in a node,[1] typically on the order of 100 or more), which reduces the number of I/O operations required to find an element in the tree.
+```
+
+
+## prefix b+ tree
+```
+前缀索引， 当河南能找表河南省的时候， 去年省字。 
+How efficient are prefix B+-trees? Experimental runs indicate that there is almost no difference in the time needed to execute algorithms in B+-trees and simple prefix B+-trees, but prefix B+-trees need 50–100% more time. In terms of disk accesses, there is no difference between these trees in the number of times the disk is accessed for trees of 400 nodes or less. For trees of 400–800 nodes, both simple prefix B+-trees and prefix B+-trees require 20–25% fewer accesses (Bayer and Unterauer 1977). This indicates that simple prefix B+-trees are a viable option, but prefix B+-trees remain largely of theoretical interest
+```
+
+
+## k-d b tree
+```
+提高kd tree内存效率
+root pointer, region pages, point pages. 
+```
+
+
+## bit tree
+```
+把前缀B树做到极致。
+A very interesting approach is, in a sense, taking to the extreme the prefix B+-tree method. In this method, bytes are used to specify separators. In bit-trees, the bit level is reached (Ferguson 1992).
+```
+
+
+
+## R树
+```
+
 ```
