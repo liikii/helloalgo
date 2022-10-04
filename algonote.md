@@ -360,6 +360,7 @@ How efficient are prefix B+-trees? Experimental runs indicate that there is almo
 ```
 提高kd tree内存效率
 root pointer, region pages, point pages. 
+???
 ```
 
 
@@ -367,6 +368,7 @@ root pointer, region pages, point pages.
 ```
 把前缀B树做到极致。
 A very interesting approach is, in a sense, taking to the extreme the prefix B+-tree method. In this method, bytes are used to specify separators. In bit-trees, the bit level is reached (Ferguson 1992).
+???
 ```
 
 
@@ -377,6 +379,35 @@ R: rectangle
 从叶子节点开始， 把空间柜起来。 
 最小边界矩形
 minimal bounding rectangle.
+???
 ```
+
+
+## 2-4 tree
+```
+红黑树同构
+用B树实现二叉， 但是又会有空间浪费。 引入水平指针， 垂直指针。 双色结构 中称为红指针黑指针。 
+???
+2–3–4 tree (also called a 2–4 tree) is a self-balancing data structure that can be used to implement dictionaries. The numbers mean a tree where every node with children (internal node) has either two, three, or four child nodes:
+
+a 2-node has one data element, and if internal has two child nodes;
+a 3-node has two data elements, and if internal has three child nodes;
+a 4-node has three data elements, and if internal has four child nodes;
+
+2–3–4 trees are isomorphic to red–black trees, meaning that they are equivalent data structures. In other words, for every 2–3–4 tree, there exists at least one red–black tree with data elements in the same order. Moreover, insertion and deletion operations on 2–3–4 trees that cause node expansions, splits and merges are equivalent to the color-flipping and rotations in red–black trees.
+```
+
+
+## trie
+```
+Trie的核心思想是空间换时间。利用字符串的公共前缀来降低查询时间的开销以达到提高效率的目的。
+
+前缀树的3个基本性质：
+* 根节点不包含字符，除根节点外每一个节点都只包含一个字符。
+* 从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。
+* 每个节点的所有子节点包含的字符都不相同。
+???
+```
+
 
 
