@@ -5,6 +5,36 @@
 ```
 
 
+## greedy method 
+```
+最大  最小问题
+优化问题
+```
+
+## linear programming
+```
+线性规划
+最大  最小问题
+feasible solution
+feasible region
+optimal solution
+optimal value
+```
+
+
+## dynamic programming
+```
+动态规划问题
+一个最优策略的子策略总是最优的
+```
+
+## branch and bound 
+```
+整数规划
+The algorithm depends on efficient estimation of the lower and upper bounds of regions/branches of the search space. If no bounds are available, the algorithm degenerates to an exhaustive search.
+```
+
+
 ## singly linked list
 ```
 对比数组
@@ -588,4 +618,10 @@ assignment problem
 ## the hamiltonian cycle problem
 ```
 ???
+```
+
+
+## sorting
+```
+
 ```
