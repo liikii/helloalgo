@@ -415,6 +415,7 @@ Trie的核心思想是空间换时间。利用字符串的公共前缀来降低�
 ```
 顶点与顶点边之间的集合。 
 重点动态规划
+运筹学 关文忠
 ```
 
 
@@ -426,4 +427,83 @@ Trie的核心思想是空间换时间。利用字符串的公共前缀来降低�
 ```
 
 
+## graph traversals
+```
+广度  深度
+广度:
+while
+一个个消灭， 再消灭连接的点， 继续
+一层层包围式。 
+深度:
+per-order recursion
+发现一个往下就往下递归。 最小树。 spanning tree. 
+```
 
+
+## shortest paths
+```
+马车驿站问题
+倒序想， 找边界最近点。 
+找边界最近点
+增广动态优化
+```
+
+
+## all to all shortest path problem
+```
+矩阵算法
+增广
+```
+
+## cycle detection  
+```
+wfi 矩阵算法可以， 增广0值发生变化 
+使用 DFS 可以判断一个无向图和有向中是否存在环。深度优先遍历图，如果在遍历的过程中，发现某个结点有一条边指向已访问过的结点，并且这个已访问过的结点不是上一步访问的结点，则表示存在环。
+```
+
+##  union-find problem
+```
+disjoint set 
+例如， 三个点， 两条边 组成了三个点的集合， 加入另一条边， 他不属于已有的边， 但是他的两个点在原集合。 证明有个环。 
+```
+
+
+
+## minimal spanning tree
+```
+避圈法（找最短边）
+任选一结点 放入集合V， 其余结点放入集合W。 
+找出集合之间最短的边， 然后把最短连接点放入集合V。 
+破圈法（）
+```
+
+
+## Connectivity 
+```
+dfs 
+```
+
+## connectivity in undirected graphs
+```
+dfs 
+???
+```
+
+## connectivity in directed graphs
+```
+dfs
+???
+```
+
+
+
+## topological Sort
+```
+applications:
+* build systems
+* advanced-packaging tool(apt-get)
+* task scheduling
+* pre-requisite problems
+动态优化， 找出最不依赖的元素， 删了， 然后再找。 
+
+```
