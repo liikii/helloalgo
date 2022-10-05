@@ -525,3 +525,67 @@ applications:
 ```
 
 
+## maximum flows of minimum cost
+```
+最小费用最大流
+线性规划法
+图解法
+分出两张图， 一个流量图， 一个费用图。 
+费用图的最短路  流量不够用动态优化
+```
+
+
+## matching 
+```
+婚姻问题
+完美匹配  不稳定匹配  稳定匹配
+动态优化问题
+findmaximummatching 
+stable matching problem
+assignment problem
+```
+
+
+## matching in nonbipartite graph
+```
+二分图  男女图
+非二分图
+```
+
+## eulerian and hamiltonian graph
+## eulerian graphs
+```
+七桥问题
+中国邮递员问题（奇点最多重复一次）
+奇点之间组成回路
+```
+
+## graph coloring 
+```
+???
+```
+
+# np-complete problems in graph
+## the clique problem
+```
+派系问题
+```
+
+## the 3-colorability problem
+```
+三色问题 四色可以分所有图
+```
+
+
+## the vertex cover problem
+```
+顶点覆盖问题
+图的覆盖是一個顶点的集合，使图中的每一条边都至少連結該集合中的一个顶点。寻找最小的顶点覆盖的问题称为顶点覆盖问题（Vertex cover），它是一个NP完全问题。
+网点问题
+```
+
+
+## the hamiltonian cycle problem
+```
+???
+```
