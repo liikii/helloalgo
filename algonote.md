@@ -1,3 +1,10 @@
+## books
+```
+《管理运筹学》关文忠
+《c++数据结构与算法》 adam drozdek
+```
+
+
 ## singly linked list
 ```
 对比数组
@@ -505,5 +512,16 @@ applications:
 * task scheduling
 * pre-requisite problems
 动态优化， 找出最不依赖的元素， 删了， 然后再找。 
-
 ```
+
+
+# networks
+## maximum flows
+```
+最大流问题， 最大运输量问题
+流量容量
+先找一条可行路径为增长链
+从S-T找到一条最大流。然后再找一条， 直到没有
+```
+
+
