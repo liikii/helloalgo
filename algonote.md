@@ -21,6 +21,8 @@ optimal solution
 optimal value
 ```
 
+## Abdul Bari
+
 
 ## dynamic programming
 ```
@@ -623,5 +625,30 @@ assignment problem
 
 ## sorting
 ```
+... ...
+```
 
+## insertion sortting
+```
+类似接牌， 从第一张开始比。 
+多余对比
+```
+
+
+## selection sortting
+```
+先找最小， 然后找次小
+多余对比
+```
+
+
+## buble sort
+```
+从头开始向下， 一对一对比，比出最大到最后。 然后再来一轮找二大。  
+```
+
+
+## comb sort 
+```
+The basic idea is to eliminate turtles, or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously. Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
 ```
