@@ -689,3 +689,26 @@ In computer science, heapsort is a comparison-based sorting algorithm. Heapsort 
 分治  取中位数， 分类， 然后  
 Quicksort is an in-place sorting algorithm. Developed by British computer scientist Tony Hoare in 1959[1] and published in 1961,[2] it is still a commonly used algorithm for sorting. When implemented well, it can be somewhat faster than merge sort and about two or three times faster than heapsort.
 ```
+
+
+## merge sort
+```
+合并已排好序的小数组。
+The problem with quicksort is that its complexity in the worst case is O(n2
+) because it is difficult to control the partitioning process. Different methods of choosing a bound attempt to make the behavior of this process fairly regular; however, there is no guarantee that partitioning results in arrays of approximately the same size. Another strategy is to make partitioning as simple as possible and concentrate on merging the two sorted arrays. This strategy is characteristic of mergesort. It was one of the first sorting algorithms used on a computer and was developed by John von Neumann
+```
+
+
+## radix sort
+```
+基数排序
+个位数排好， 十位数排， 十位数排好， 百位数排。 
+
+```
+
+
+## counting sort 
+```
+找出数据最大数， 做成数组， 然后各找出各的位置。 命中计数加1（主要解决一个数出现多次问题）， 把数组从头到尾叠加。 就是想应元素的位置。 
+计数排序缺点空间浪费。 
+```
