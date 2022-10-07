@@ -630,6 +630,7 @@ assignment problem
 
 ## insertion sortting
 ```
+把数组 看成虚拟的两个数组， 一个数组为空。 然后插入到他的位置。
 类似接牌， 从第一张开始比。 
 多余对比
 ```
@@ -650,5 +651,41 @@ assignment problem
 
 ## comb sort 
 ```
+Comb sort improves on bubble sort in the same way that Shellsort improves on insertion sort.
 The basic idea is to eliminate turtles, or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously. Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
+```
+
+
+## decison trees
+```
+???
+```
+
+
+## efficient sorting algorithms
+```
+先对原始数组的各部分进行排序， 待各个部分已有序时， 再对整个数组排序
+```
+## shell sort
+```
+shell对插入的改进。 类似跳表。 
+减少冒泡与插入排序的极端情况
+a generalization of sorting by exchange (bubble sort) or sorting by insertion (insertion sort).
+The running time of Shellsort is heavily dependent on the gap sequence it uses. For many practical variants, determining their time complexity remains an open problem.
+？？
+```
+
+
+## heap sort
+```
+把数据看成一个堆
+最小堆最大堆
+In computer science, heapsort is a comparison-based sorting algorithm. Heapsort can be thought of as an improved selection sort: like selection sort, heapsort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element from it and inserting it into the sorted region. Unlike selection sort, heapsort does not waste time with a linear-time scan of the unsorted region; rather, heap sort maintains the unsorted region in a heap data structure to more quickly find the largest element in each step
+```
+
+
+## quick sort
+```
+分治  取中位数， 分类， 然后  
+Quicksort is an in-place sorting algorithm. Developed by British computer scientist Tony Hoare in 1959[1] and published in 1961,[2] it is still a commonly used algorithm for sorting. When implemented well, it can be somewhat faster than merge sort and about two or three times faster than heapsort.
 ```
