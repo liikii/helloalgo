@@ -712,3 +712,7 @@ The problem with quicksort is that its complexity in the worst case is O(n2
 找出数据最大数， 做成数组， 然后各找出各的位置。 命中计数加1（主要解决一个数出现多次问题）， 把数组从头到尾叠加。 就是想应元素的位置。 
 计数排序缺点空间浪费。 
 ```
+
+
+
+# hashing
