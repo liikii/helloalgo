@@ -716,3 +716,6 @@ The problem with quicksort is that its complexity in the worst case is O(n2
 
 
 # hashing
+```
+快速得到要查找元素的index.
+```
