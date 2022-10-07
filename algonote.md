@@ -801,7 +801,27 @@ references to keys.
 
 
 * coalesced hashing
-hashtable存放值和next Pointer
+hashtable存放值和next Pointer(linear probe)
 Coalesced hashing, also called coalesced chaining, is a strategy of collision resolution in a hash table that forms a hybrid of separate chaining and open addressing.
+. Noncolliding keys are 
+stored in their home positions, as in Figure 10.7a. Colliding keys are put in the last 
+available slot of the cellar and added to the list starting from their home position
 ```
 
+
+## Bucket Addressing
+```
+把冲突的元素放在表中同一个段位置， 然后再设一个溢出区。 
+```
+
+
+## deletion
+```
+..
+```
+
+## perfect hash function
+```
+
+
+```
