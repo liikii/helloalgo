@@ -718,4 +718,90 @@ The problem with quicksort is that its complexity in the worst case is O(n2
 # hashing
 ```
 快速得到要查找元素的index.
+key space ---> hash table
+表索引 One to one. 
+hash 索引  many to one
 ```
+
+## hash functions
+```
+... ...
+```
+
+## division
+```
+取模
+```
+
+
+## folding
+```
+A folding hash code is produced by dividing the input into n sections of m bits, where 2m is the table size, and using a parity-preserving bitwise operation such as ADD or XOR to combine the sections, followed by a mask or shifts to trim off any excess bits at the high or low end. For example, for a table size of 15 bits and key value of 0x0123456789ABCDEF, there are five sections consisting of 0x4DEF, 0x1357, 0x159E, 0x091A and 0x8. Adding, we obtain 0x7AA4, a 15-bit value.
+```
+
+
+
+## Mid-squares
+```
+平方取中
+A mid-squares hash code is produced by squaring the input and extracting an appropriate number of middle digits or bits. For example, if the input is 123,456,789 and the hash table size 10,000, squaring the key produces 15,241,578,750,190,521, so the hash code is taken as the middle 4 digits of the 17-digit number (ignoring the high digit) 8750. The mid-squares method produces a reasonable hash code if there is not a lot of leading or trailing zeros in the key. This is a variant of multiplicative hashing, but not as good because an arbitrary key is not a good multiplier.
+```
+
+
+## Extraction
+```
+只取部分关键字来计算
+```
+
+
+## radix transformaion
+```
+基数转换法
+Using the radix transformation, the key K is transformed into another number base; 
+K is expressed in a numerical system using a different radix. If K is the decimal number 345, then its value in base 9 (nonal) is 423. This value is then divided modulo 
+TSize, 
+```
+
+## Universal Hash Functions
+```
+全域散列法
+？？？
+全域哈希指的是在哈希函数中, 加入随机值保证哈希函数的不同. 用于实现完美散列, 其中各表随机值是要保存的.
+```
+
+## collision resolution
+```
+几乎所有的散列函数都会出现多个关键字同时映射到一个位置的情况。 
+```
+
+## open addressing
+```
+持续在hashtable里找新（空）位置， 线性探查， linear probe.
+以不同间隔找新位置
+Open addressing, or closed hashing, is a method of collision resolution in hash tables. With this method a hash collision is resolved by probing, or searching through alternative locations in the array (the probe sequence) until either the target record is found, or an unused array slot is found, which indicates that there is no such key in the table.[1] Well-known probe sequences include:
+* Linear probing
+in which the interval between probes is fixed—often set to 1.
+* Quadratic probing
+平方加入。 
+in which the interval between probes increases quadratically (hence, the indices are described by a quadratic function).
+* Double hashing
+in which the interval between probes is fixed for each record but is computed by another hash function.
+
+Some open addressing methods, such as Hopscotch hashing, Robin Hood hashing, last-come-first-served hashing and cuckoo hashing move existing keys around in the array to make room for the new key. This gives better maximum search times than the methods based on probing. 
+```
+
+
+## chainging 
+```
+* separate chaining: 
+hashtalbe表里的每个位置存放着一个链表
+Keys do not have to be stored in the table itself. In chaining, each position of the table 
+is associated with a linked list or chain of structures whose info fields store keys or 
+references to keys.
+
+
+* coalesced hashing
+hashtable存放值和next Pointer
+Coalesced hashing, also called coalesced chaining, is a strategy of collision resolution in a hash table that forms a hybrid of separate chaining and open addressing.
+```
+
