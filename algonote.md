@@ -1089,3 +1089,43 @@ Number of initial buckets need not be multiple of 2.
 ```
 
 
+# Data Compression
+
+
+## Conditions for Data Compression
+```
+Conditions for Data Compression
+```
+
+
+## Huffman Coding
+```
+Huffman Coding
+思路 对字符重新编码， 前缀不覆盖， 频率高的用短编码频率低的用长编码。 得预先知道出现频率。 
+```
+
+
+##  Adaptive Huffman Coding
+```
+解决预先得有词频率的问题， 动态生成Huffman 树， 依赖频率。 
+```
+
+
+## Run-Length Encoding
+```
+nnnnnn = 6n
+```
+
+
+
+##  Ziv-Lempel Code  lzw
+```
+TOBEORNOTTOBEORTOBEORNOT
+用短编码代替长字
+一次读一个词和他的后继， 然后查字典， 如果没有就在字典里插入这一对， 比如to 27.  no 33 如果有就再读他的后缀not, 编not. 。 
+读取的时候
+读取的时候， 也是根据读到的字和它的后继建字典， 然后解后边短编的码。 
+```
+
+
+
