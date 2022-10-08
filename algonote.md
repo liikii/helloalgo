@@ -864,3 +864,20 @@ elements stabilize.
 ```
 
 
+
+## hash functions for extendible files
+```
+再散列
+In the directory schemes, key access is mediated by the access to a directory or 
+an index of keys in the structure. There are several techniques and modifications to 
+those techniques in the category of the directory schemes. We mention only a few: 
+expandable hashing (Knott 1971), dynamic hashing (Larson 1978), and extendible 
+hashing (Fagin et al. 1979). 
+```
+
+
+## Hash Functions for Extendible Files
+```
+ Hash Functions for Extendible Files
+
+```
