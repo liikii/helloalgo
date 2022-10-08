@@ -817,11 +817,50 @@ available slot of the cellar and added to the list starting from their home posi
 
 ## deletion
 ```
-..
+线性探查法， 删除， 标记式删除。 为了后期的探查 。 表在删除记录达到一定数量后，进行清洗。 
 ```
 
 ## perfect hash function
 ```
-
-
+In computer science, a perfect hash function h for a set S is a hash function that maps distinct elements in S to a set of m integers, with no collisions. In mathematical terms, it is an injective function.
+Algorithms for constructing perfect hash functions tend to be tedious, but a number are
+known.
 ```
+
+## Cichelli’s Method
+```
+One algorithm to construct a minimal perfect hash function was developed by Richard 
+J. Cichelli. It is used to hash a relatively small number of reserved words. The function 
+is of the formh(word) = (length(word) + g(firstletter(word)) + g(lastletter(word))) mod TSize
+```
+
+## The FHCD Algorithm
+```
+...
+```
+
+
+## rehashing
+```
+```
+
+
+## cockoo hashing
+```
+两个hash function, two hashtable, 空位置就插入， 不空驱逐旧的， 放下一个表。 
+● To insert an element x,
+start by inserting it
+into table 1.
+● If h₁(x) is empty, place
+x there.
+● Otherwise, place x
+there, evict the old
+element y, and try
+placing y into table 2.
+● Repeat this process,
+bouncing between
+tables, until all
+elements stabilize.
+```
+
+
