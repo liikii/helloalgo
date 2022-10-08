@@ -1078,6 +1078,14 @@ Bucket b = 40 mod 8 = 0. Since 0 < s, b = 40 mod 16 = 8. 40 is in bucket 8.
 
 SEARCH FOR RECORD WITH KEY 52 (DOES NOT EXIST)
 Bucket b = 52 mod 8 = 4. 42 is not in bucket 4 as expected.
+
+4 NOTES
+In a round, if a bucket to which a key is hashed is full, buckets are split in the order of bucket numbers 0, 1, 2, 3, etc., irrespective of whether or not the buckets are full.
+When a key is hashed to bucket b that is full, bucket pointed to by the split pointer is split and not the bucket b. An overflow page is chained to b or its existing overflow page to accommodate the new key.
+In a round, when split pointer is equal to number of buckets present at the beginning of the round, it is reset to 0, a new round is started, buckets are split again starting from bucket 0 and new hash function hi+1(K) is used.
+If hashed bucket for key K is less than split pointer bucket, key has to be rehashed using hi+1(K) to know bucket number of the key.
+When all initial buckets are split, number of buckets will be double the number of initial buckets.
+Number of initial buckets need not be multiple of 2.
 ```
 
 
