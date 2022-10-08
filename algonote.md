@@ -4,6 +4,111 @@
 《c++数据结构与算法》 adam drozdek
 ```
 
+## references
+```
+Course Contents
+Asymptotic Notation, Divide-and-Conquer Paradigm, Recurrences
+Sorting Algorithms: Insertion Sort, Merge Sort, Heap Sort, Quick Sort
+Sorting Lower Bounds, BucketSort, RadixSort.
+Trees, Binary Search Trees, AVL Trees, Red-Black Trees, Treaps
+Tries, Compact Tries
+Hashing.
+String Matching: Knuth-Morris-Pratt Algorithm, Boyer-Moore Algorithm, Aho-Corasick Algorithm
+Suffix Trees, Ukkonen’s Algorithm, Suffix Arrays
+Dynamic Programming with Samples: Knapsack Problem, Levenshtein Distance (LCS Problem)
+Greedy Algorithms with Samples: Huffman Coding, Activity Selection Problem, LCS Problem via Greedy Algorithm
+Graphs. Topological Sort, Strongly Connected Components, Minimum Spanning Trees.
+Single-Source and All-Pairs Shortest Paths in Graphs. Dijkstra’s Algorithm, Bellman-Ford Algorithm, Floyd-Warshall Algorithm
+Maximum Flow, Ford-Fulkerson Method
+Introduction to Automata. Deterministic Finite Automata. Nondeterministic Finite Automata
+Regular Expressions
+Decision and Closure Properties of Regular Languages
+Context-Free Languages. Properties of Context-Free Languages
+Parse Trees. Normal Forms for Context-Free Grammars
+Pushdown Automata. Equivalence of CFG’s and PDA’s
+Range Minimum Queries (RMQ).
+Cartesian Trees and RMQ.
+
+=============================
+Fundamental Data Structures
+Introduction
+Abstract data type
+Data structure
+Analysis of algorithms
+Amortized analysis
+Accounting method
+Potential method
+Sequences
+Array data type
+Array data structure
+Dynamic array
+Linked list
+Doubly linked list
+Stack (abstract data type)
+Queue (abstract data type)
+Double-ended queue
+Circular buffer
+Dictionaries
+Associative array
+Association list
+Hash table
+Linear probing
+Quadratic probing
+Double hashing
+Cuckoo hashing
+Hopscotch hashing
+Hash function
+Perfect hash function
+Universal hashing
+K-independent hashing
+Tabulation hashing
+Cryptographic hash function
+Sets
+Set (abstract data type)
+Bit array
+Bloom filter
+MinHash
+Disjoint-set data structure
+Partition refinement
+Priority queues
+Priority queue
+Bucket queue
+Heap (data structure)
+Binary heap
+d-ary heap
+Binomial heap
+Fibonacci heap
+Pairing heap
+Double-ended priority queue
+Soft heap
+Successors and neighbors
+Binary search algorithm
+Binary search tree
+Random binary tree
+Tree rotation
+Self-balancing binary search tree
+Treap
+AVL tree
+Red–black tree
+WAVL tree
+Scapegoat tree
+Splay tree
+Tango tree
+Skip list
+B-tree
+B+ tree
+Rope
+Integer and string searching
+Trie
+Radix tree
+Suffix tree
+Suffix array
+Suffix automaton
+Van Emde Boas tree
+Fusion tree
+
+```
+
 
 ## greedy method 
 ```
@@ -1127,5 +1232,11 @@ TOBEORNOTTOBEORTOBEORNOT
 读取的时候， 也是根据读到的字和它的后继建字典， 然后解后边短编的码。 
 ```
 
+
+
+# Memory Management
+```
+Memory Management
+```
 
 
