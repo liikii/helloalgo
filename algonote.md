@@ -903,3 +903,181 @@ Local Depth：与Local Depth相同，除了Local Depth与存储桶(而不是目�
 第8步-重新分割拆分存储区元素：拆分后的溢出存储区中存在的元素将通过目录的新全局深度进行重新整理。
 步骤9 –元素成功散列。
 ```
+
+## dynamic hashing
+```
+dynamic hashing
+```
+
+
+## linear hashing
+```
+线性散列
+比如 初始化 tsize=4, h0 = Hash function to be used h0(K) = K mod  1 * 4.  1=2的零次方. split pointer = 0.  round = 0.
+如果一个溢出， 启动线性散列后继h1  h1(K) = K mod 2 * 4. 2 = 2的1次方。 然后再线性加一个bucket.然后重新Hash split split pointer指的桶。 上移split pointer. 
+tsize 都split完。 round += 1. split reset 复位到0。 基础hash 设为h1, 后继hash设为h2. 
+====================================================================================
+查找的时候。 
+根据split值，和tsize值， round值， 决定那些部分用当前hash function. 那些用后继函数来查找。 
+
+
+
+One-line summary: Linear hashing is a hashing scheme that exhibits near-optimal performance, both in terms of access cost and storage load.
+Hashing basics:
+records indexed with primary (unique) key
+hashing function h(c) assigns to a key c a unique bucket.
+If a bucket becomes full, we have a collision. Collision resolution is the process of storing c (which is now an overflow record) into an overflow bucket. Chaining is the usual way of doing it.
+Instead of chaining or overflow bucket creation, it would be nice to reorganize data or add more buckets, both of which require a dynamically created hash function, which is usually a modification to the currently used hash function, called a split.
+===================================================================================
+AN EXAMPLE
+This example shows various aspects of linear hashing with more data. Initially the file (at least logically) will be empty. As records are inserted into the file, buckets are added to the file. Key of each record could consist of one or more fields of the record. We assume that a hash function is used to come up with a number before hashing function specified in the linear hashing is used.
+
+Let each bucket has capacity for storing 4 records.
+
+Let initial number of buckets N be 4.
+
+Record key values could be numbers, names or a combination of these depending on fields you select as key for the file. If a key contains more than one field or a key field is not a number, we have to use a hash function to get a number because we are going to use other hash functions to map record keys to bucket numbers.
+
+Note:- The example is directly taken from third edition of the book Database Management Systems by Ramakrishnan and Gehrke.
+3.1 INSERTING RECORDS
+1) Insert record with keys 32, 44, 36, 9, 25, 5, 14, 18, 10, 30, 31, 35, 7 and 11
+
+Current round i = 0.
+Split pointer s = 0.
+Hash function to be used h0(K) = K mod 4.
+h0(32) = 32 mod 4 = 0. Insert record in bucket 0.
+h0(44) = 44 mod 4 = 0. Insert record in bucket 0.
+
+2) Insert record with key 43.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(43) = 43 mod 4 = 3. Insert record in bucket 3. But the bucket is full.
+Add an overflow page and chain it to 3.
+Because there is an overflow, split bucket 0 pointed to by s and add a new bucket 4.
+Redistribute bucket 0 contents between buckets 0 and 4 using next hash function h1(K) = K mod 2 * 4.
+Increment split pointer.
+
+3) Insert record with key 37.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(37) = 37 mod 4 = 1. Insert record in bucket 1.
+
+
+4) Insert record with key 29.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(29) = 29 mod 4 = 1. Insert record in bucket 1. But the bucket is full.
+Split bucket 1 pointed to by s.
+Add new bucket 5.
+Redistribute bucket 1 contents and 29 between buckets 1 and 5 with new hash function h1(K) = K mod 2 * 4.
+Increment split pointer
+No overflow page is needed because we are splitting the same bucket to which the key was mapped with the original hash function.
+
+
+5) Insert record with key 22.
+
+Current round i = 0.
+Hash function to be used h0 (K) = K mod 4.
+h0 (22) = 22 mod 4 = 2. Insert record in bucket 2. But the bucket is full.
+Split bucket 2 pointed to by s.
+Add new bucket 6.
+Redistribute bucket 2 contents and 22 between buckets 2 and 6 with new hash function h1(K) = K mod 2 * 4.
+Increment split pointer
+No overflow page is needed because we are splitting the same bucket to which the key was mapped with the original hash function.
+
+
+6) Insert record with key 66.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(66) = 66 mod 4 = 2. Insert record in bucket 2.
+Since 2 < s, we have to use h1 hash function.
+h1(66) = 66 mod 8 = 2. The same bucket number and hence insert record in bucket 2.
+
+7) Insert record with key 34.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(34) = 34 mod 4 = 2. Insert record in bucket 2.
+2 < s, hence need to use h1 hash function.
+h1(34) = 34 mod 8 = 2. Again the same bucket. Insert record in bucket 2.
+
+8) Insert record with key 50.
+
+Current round i = 0.
+Hash function to be used h0(K) = K mod 4
+h0(50) = 50 mod 4 = 2. Insert record in bucket 2.
+As 2 < s, use h1 for hashing.
+h1(50) = 50 mod 8 = 2. The same bucket. Insert record in bucket 2.
+But the bucket is full.
+Split bucket 3.
+Add new bucket 7.
+Redistribute bucket 3 contents and 50 between buckets 2 and 7 with new hash function h1(K) = K mod 2 * 4.
+Add an overflow bucket, insert 50 in it and chain it to bucket 2
+Increment split pointer. It will be 4.
+Since it is equivalent to initial number of buckets N = 4, reset it to 0.
+Use has function to be used as h1(K) = K mod 2 * 4 for further insertion of records.
+Set next round i to i + 1. Now the round i will be 1.
+
+
+9) Insert record with key 45.
+
+Current round i = 1.
+Hash function to be used h1(K) = K mod 2 * 4.
+h1(45) = 45 mod 8 = 5. Insert record in bucket 5.
+
+
+10) Insert record with key 53.
+
+Current round i = 1.
+Hash function to be used h1(K) = K mod 21 * 4
+h1(53) = 53 mod 8 = 5. Insert record in bucket 5. But the bucket is full.
+Therefore, split bucket 0 as pointed to by split pointer.
+Add new bucket 8.
+Redistribute its contents between buckets 0 and 8 with new hash function h2(K) = K mod 22 * 4 = K mod 16.
+h1(32) = 32 mod 16 = 0. Hence 32 remains in the same bucket
+Add an overflow bucket, insert 53 in it and chain it to bucket 5
+Increment split pointer. It will be 1.
+
+11) Insert record with key 48, 64, 80
+
+Current round i = 1.
+Hash function to be used h1(K) = K mod 21 * 4 = K mod 8.
+h1(48) = 48 mod 8 = 0. Insert record in bucket 0.
+Since 0 < s, h2(48) = 48 mod 22*4= 48 mod 16 = 0. Insert record in bucket 0.
+h1(64) = 64 mod 8= 0. Insert record in bucket 0.
+Since 0 < s, h2(64) = 64 mod 22*4= 64 mod 16 = 0. Insert record in bucket 0.
+h1(80) = 80 mod 8 = 0. Insert record in bucket 0.
+Since 0 < s, h2(80) = 80 mod 22*4= 80 mod 16 = 0. Insert record in bucket 0.
+
+
+12) Insert record with key 40
+
+Current round i = 1.
+Hash function to be used h1(K) = K mod 21 * 4 = K mod 8.
+h1(40) = 40 mod 8 = 0.
+Since 0 < s, h2(40) = 40 mod 22 * 4 = 40 mod 16 = 8. Insert record in bucket 8.
+
+3.2 SEARCHING
+Searching can be done as following. If current hash function is hi(K), let bucket b = hi(K). If b < s, then let b = hi+1(K). Search for the record with K in bucket b.
+
+In the above example, current hash function is h1(K) = K mod 21*4 = K mod 8.
+
+EXAMPLES
+SEARCH FOR RECORD WITH KEY 35
+Bucket b = 35 mod 8 = 3 and 35 is in bucket 3.
+
+SEARCH FOR RECORD WITH KEY 64
+Bucket b = 64 mod 8 = 0. Since 0 < s, b = 64 mod 16 = 0. Again bucket 0 and 64 is in bucket 0.
+
+SEARCH FOR RECORD WITH KEY 40
+Bucket b = 40 mod 8 = 0. Since 0 < s, b = 40 mod 16 = 8. 40 is in bucket 8.
+
+SEARCH FOR RECORD WITH KEY 52 (DOES NOT EXIST)
+Bucket b = 52 mod 8 = 4. 42 is not in bucket 4 as expected.
+```
+
+
