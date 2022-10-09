@@ -1369,8 +1369,45 @@ bruteforcestringmatching
 ```
 
 
-## 
+## Straightforward Algorithms
+```
+Exact string matching consists of finding an exact copy of pattern P in text T. It is an 
+all-or-nothing approach; if there is a very close similarity between P and a substring of 
+T, the partial match is rejected
+```
 
 
+##  The Knuth-Morris-Pratt Algorithm
+```
+减少多余比较
+The Knuth-Morris-Pratt Algorithm
+```
+
+
+## Boyer-Moore Algorithm
+```
+???
+```
+
+
+## Multiple Searches
+```
+Multiple Searches
+找所有出现的位置
+```
+
+
+
+## Bit-Oriented Approach
+```
+神算法
+状态转换算法
+baezn yates gamnet 算法
+bitap算法
+shift or shift and 算法
+==================================
+状态叠加， 状态不清空， 状态不行动， 不重复比较。 
+
+```
 
 
