@@ -1237,6 +1237,140 @@ TOBEORNOTTOBEORTOBEORNOT
 # Memory Management
 ```
 Memory Management
+外部碎片
+external fragmentation
+内部碎片
+internal fragmentation
 ```
+
+## The Sequential-Fit Methods
+```
+用链表维护， 分配第一个满足的， 分配最接近的， 分配最大的  分配第二个满足的
+first-fit best-fit worst-fit next-fit
+```
+
+
+## The Nonsequential-Fit Methods
+```
+exact fit oldehoeft allan
+The Nonsequential-Fit Methods
+```
+
+
+
+## Buddy Systems
+```
+Buddy Systems
+```
+
+
+##  Garbage Collection
+```
+Garbage Collection
+
+Garbage collection methods usually include two phases, which may be implemented as distinct passes or can be integrated:
+1.	 The marking phase—to identify all currently used cells.
+2. The reclamation phase—when all unmarked cells are returned to the memory pool; 
+this phase can also include heap compaction.
+垃圾回收一般分两个阶段， 标记阶段。 重新声明阶段。 
+```
+
+## Mark-and-Sweep
+```
+Mark-and-Sweep
+Mark and sweep is one of the earliest and best-known garbage collection algorithms.
+
+It works perfectly well with cycles, but
+requires some significant support from the compiler and run-time support system.
+Assumptions   
+The core assumptions of mark and sweep are:
+
+Each object on the heap has a hidden "mark" bit.
+We can find all pointers outside the heap (i.e., in the activation stack and static area)
+For each data object on the heap, we can find all pointers within that object.
+We can iterate over all objects on the heap
+ tracing garbage collection is a form of automatic memory management that consists of determining which objects should be deallocated ("garbage collected") by tracing which objects are reachable by a chain of references from certain "root" objects, and considering the rest as "garbage" and collecting them.
+
+ ????
+
+
+This algorithm actually goes through 3 important steps.
+ Root: In general, a root is a global variable that is used in the code. A window object in javascript can act as a   root. This algorithm uses global object root to find whether the objects are reachable or unreachable.
+This algorithm then monitors every root and also their children. While monitoring, some objects which are reachable are marked and remaining objects which are unreachable are unmarked, based on the provided conditions.
+ The objects which are unmarked, that means which are unreachable will be garbage collected. 
+
+
+In the presentation we discussed two of the basic garbage collection algorithms:
+Mark-Sweep and Mark-Compact. Both algorithms attempt to locate all the live objects in
+the memory heap, and free up the memory of all the unmarked objects (the garbage).
+Because true liveness is undecidable, pointer reachability is used instead - an object is
+deemed live iff it can be reached by following a path from a set of known roots.
+Mark-Sweep has two phases: first, we locate and mark all live objects in the heap
+(with a DFS from the roots). The marking is done by setting a mark-bit in the header of
+an object, or by using a special table - a bitmap. In the second phase, all the heap is
+traversed, and the memory occupied by any object that didn’t have its mark-bit set is
+freed. Mark-Sweep is very fast and simple, but prone to severe fragmentation problems.
+Mark-Compact also has two phases: first, we mark all the live objects, as before.
+Then we relocate (move) objects on the heap, with the intention of compacting the heap
+so that all the live objects would be located at the beginning of the heap, and all the
+memory that comes after those objects will be free for allocation. The most common
+and widely used relocation is technique is called sliding - all the live objects are slid to
+the beginning of the heap, “squeezing out” the garbage, while retaining their order (and
+thus, the spatial locality). Mark-Compact solves the fragmentation problem, usually at
+the cost of memory overhead, and longer running time.
+My original contribution was the Snapshot algorithm. The idea behind it is the fact
+that the set of dead objects doesn’t shrink, so the mutator threads don’t have to be
+stopped while garbage collection is performed. Mutators are stopped for a short period,
+while a snapshot (a copy) of the relevant part of the heap is taken. That copy is then
+traversed to locate all the dead objects. The last step is to traverse the original heap
+(possibly concurrently with mutator threads) and free all the objects that were deemed
+dead in the copy (because those couldn’t possibly come back to life in the original).
+During the discussion after the presentation a couple of improvements to MarkSweep came up:
+● Using a FIFO buffer for prefetching objects ahead of time.
+● Using edge-marking to reduce the number of cache misses.
+
+```
+
+
+
+## copying methods 
+```
+stop and copy algorithm
+旧空间满后， 把有用的移到新空间。 旧空间清空。 
+At an abstract level, all a copying collector does is start from a set of roots (in our case, the operand stack), and traverse all of the reachable memory-allocated objects, copying them from one half of memory into the other half. The area of memory that we copy from is called old space and the area of memory that we copy to is called new space. When we copy the reachable data, we compact it so that it is in a contiguous chunk. So, in effect, we squeeze out the holes in memory that the garbage data occupied. After the copy and compaction, we end up with a compacted copy of the data in new space data and a (hopefully) large, contiguous area of memory in new space in which we can quickly and easily allocate new objects. The next time we do garbage collection, the roles of old space and new space will be reversed.
+
+
+```
+
+
+## Incremental Garbage Collection
+```
+* Copying Methods
+过去方法调用垃圾回收会占用过多时间
+Incremental Garbage Collection
+stop-and-copy fromspace topspace
+* nonCopying Methods
+yuasa algorithms mark sweep
+```
+
+
+## 	 Generational Garbage Collection
+```
+分代垃圾回收。 
+```
+
+
+# String Matching
+
+##  Exact String Matching
+```
+从第一个字开始匹配， 如不中， 第二个。 
+bruteforcestringmatching
+```
+
+
+## 
+
+
 
 
