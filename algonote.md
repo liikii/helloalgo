@@ -1411,7 +1411,47 @@ shift or shift and 算法
 ```
 
 
-## 单词集合的匹配
+##  Matching Sets of Words
+```
+单词集合的匹配
+aho corasick
 ```
 
+## Regular Expression Matching
 ```
+语言与自动机
+An algorithm created by Ken Thompson constructs a nondeterministic finite 
+automaton (NDFA) corresponding to a regular expression. 
+```
+
+## Suffix Tries and Trees
+```
+Suffix Tries and Trees
+```
+
+
+##  Suffix Arrays
+```
+Suffix Arrays
+```
+
+
+## Approximate String Matching
+```
+Approximate String Matching
+edit distance
+```
+
+## String Similarity
+```
+String Similarity
+```
+
+
+##  String Matching with k Errors
+```
+wu manber matching
+String Matching with k Errors
+```
+
+
