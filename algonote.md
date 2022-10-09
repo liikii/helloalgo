@@ -1454,4 +1454,13 @@ wu manber matching
 String Matching with k Errors
 ```
 
+## cs166 additional
+```
 
+```
+
+## range minimum query
+```
+, a range minimum query (RMQ) solves the problem of finding the minimal value in a sub-array of an array of comparable objects. Range minimum queries have several use cases in computer science, such as the lowest common ancestor problem and the longest common prefix problem (LCP).
+
+```
