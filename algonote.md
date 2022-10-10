@@ -4,6 +4,32 @@
 《c++数据结构与算法》 adam drozdek
 ```
 
+## stanford courses
+```
+cs161 algorithms
+• CS154 – Introduction to Automata and Complexity
+• CS163 – The Practice of Theory Research
+• CS166 – Data Structures
+• CS168 – The Modern Algorithmic Toolbox
+• MS&E 212 – Combinatorial Optimization
+• CS250 – Error Correcting Codes
+• CS252 – Analysis of Boolean Functions
+• CS254 – Computational Complexity
+• CS255 – Introduction to Cryptography
+• CS259Q – Quantum Computing
+• CS260 – Geometry of Polynomials in Algorithm Design
+• CS261 – Optimization and Algorithmic Paradigms
+• CS263 – Counting and Sampling
+• CS265 – Randomized Algorithms
+• CS269O – Introduction to Optimization Theory
+• MS&E 316 – Discrete Mathematics and Algorithms
+• CS352 – Pseudorandomness
+• CS366 – Computational Social Choice
+• CS368 – Algorithmic Techniques for Big Data
+• EE364A/B – Convex Optimization I and II
+```
+
+
 ## references
 ```
 Course Contents
@@ -1461,6 +1487,38 @@ String Matching with k Errors
 
 ## range minimum query
 ```
-, a range minimum query (RMQ) solves the problem of finding the minimal value in a sub-array of an array of comparable objects. Range minimum queries have several use cases in computer science, such as the lowest common ancestor problem and the longest common prefix problem (LCP).
+找出区间里最小， 2个组合多少对。 然后提前求出。 
+a range minimum query (RMQ) solves the problem of finding the minimal value in a sub-array of an array of comparable objects. Range minimum queries have several use cases in computer science, such as the lowest common ancestor problem and the longest common prefix problem (LCP).
+
+
+Naive solution
+In a typical setting, the array A is static, i.e., elements are not inserted or deleted during a series of queries, and the queries to be answered on-line (i.e., the whole set of queries are not known in advance to the algorithm). In this case a suitable preprocessing of the array into a data structure ensures faster query answering. A naïve solution is to precompute all possible queries, i.e. the minimum of all sub-arrays of A, and store these in an array B such that B[i, j] = min(A[i…j]); then a range min query can be solved in constant time by array lookup in B. There are Θ(n²) possible queries for a length-n array, and the answers to these can be computed in Θ(n²) time by dynamic programming.[1]
+
+
+The Range Minimum Query problem
+(RMQ for short) is the following:
+Given an array A and two indices i ≤ j, 
+what is the smallest element out of
+A[i], A[i + 1], …, A[j – 1], A[j]?
+
+
+
+There's a simple O(n)-time algorithm for
+evaluating RMQA(i, j): just iterate across the
+elements between i and j, inclusive, and take
+the minimum
+
+● Naïvely precomputing the table is inefficient.
+● Can we do better?
+● Claim: We can precompute all subarrays in time Θ(n
+2
+)
+using dynamic programming.
+最简单算法， 一个个算出来。 遍历。 
+第二种算法， 动态规划， 一个个的结果，算两个最小， 两两的最小得三个的最小， 三个个的对比得四个。 依次。 
+
+方法三 Block Decomposition
+分成block块。 
+方法四  Sparse Tables
 
 ```
