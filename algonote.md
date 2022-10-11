@@ -27,6 +27,17 @@ cs161 algorithms
 • CS366 – Computational Social Choice
 • CS368 – Algorithmic Techniques for Big Data
 • EE364A/B – Convex Optimization I and II
+
+cs145 CS245
+DBMS implementation (that’s
+CS245, 346, 347, sometimes CS345
+Prerequisites
+CS145 (Introduction to Databases) and CS245 (Database System Principles) or equivalent knowledge is essential. We will assume that all students already understand basic database system implementation techniques. In this course you will put your basic knowledge into practice while learning about more advanced implementation techniques including those used in commercial products.
+
+We recommend that all students have prior experience with Unix, and at least with the C programming language. It is preferred that students have C++ experience as well, although it is not essential. Students with no C++ experience will need to learn quickly; students with no C/Unix experience probably should not take this course.
+
+
+
 ```
 
 
@@ -1519,6 +1530,14 @@ using dynamic programming.
 
 方法三 Block Decomposition
 分成block块。 
-方法四  Sparse Tables
+方法四  Sparse Tables 类似二分， 加， 动态规划。 
+方法五 Hybrid Strategies
+
+● ⟨O(n**2), O(1)⟩ (full preprocessing)
+● ⟨O(n log n), O(1)⟩ (sparse table)
+● ⟨O(n log log n), O(1)⟩ (hybrid approach)
+● ⟨O(n), O(n**1/2)⟩ (blocking)
+● ⟨O(n), O(log n)⟩ (hybrid approach)
+● ⟨O(n), O(log log n)⟩ (hybrid approach)
 
 ```
