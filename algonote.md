@@ -1540,4 +1540,47 @@ using dynamic programming.
 ● ⟨O(n), O(log n)⟩ (hybrid approach)
 ● ⟨O(n), O(log log n)⟩ (hybrid approach)
 
+
+A Cartesian tree can also be
+defined as follows:
+The Cartesian tree for an
+array is a binary tree obeying
+the min-heap property whose
+inorder traversal gives back
+the original array.
+
+
+Theorem: Let B₁ and B₂ be blocks of length b. Then
+B₁ ~ B₂ iff B₁ and B₂ have isomorphic Cartesian trees.
+
+
+This data structure is called the Fischer-Heun
+structure. It uses a modified version of our hybrid
+RMQ framework:
+● Set b = ½ log₄ n = ¼ log₂ n.
+● Split the input into blocks of size b. Compute an array of
+minimum values from each block.
+● Build a sparse table on that array of minima.
+● Build per-block RMQ structures for each block, using
+Cartesian tree numbers to avoid recomputing RMQ
+structures unnecessarily.
+● Make queries using the standard hybrid solution
+approach.
+● This is an ⟨O(n), O(1)⟩ solution to RMQ!
+```
+
+
+## red/black tree
+```
+In 1972, Rudolf Bayer[5] invented a data structure that was a special order-4 case of a B-tree. These trees maintained all paths from root to leaf with the same number of nodes, creating perfectly balanced trees. However, they were not binary search trees. Bayer called them a "symmetric binary B-tree" in his paper and later they became popular as 2–3–4 trees or just 2–4 trees
+
+as 2–3–4 trees
+a 2-node has one data element, and if internal has two child nodes;
+a 3-node has two data elements, and if internal has three child nodes;
+a 4-node has three data elements, and if internal has four child nodes;
+
+Nodes store 1, 2, or 3 keys and have
+2, 3, or 4 children,
+
+这就是红黑树存在的意义，既有BST的标准搜索过程，又有2-3-4树的简单插入平衡过程。
 ```
