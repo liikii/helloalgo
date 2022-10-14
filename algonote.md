@@ -511,6 +511,7 @@ a multiway tree of order m, or an m-way tree
 
 ## b trees
 ```
+核心是中心上提， 平衡树上生平衡树。 
 一是解决磁盘问题
 B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree generalizes the binary search tree, allowing for nodes with more than two children. Unlike other self-balancing binary search trees, the B-tree is well suited for storage systems that read and write relatively large blocks of data, such as databases and file systems.
 
@@ -1593,6 +1594,7 @@ approach.
 
 ## red/black tree
 ```
+23树，红线做为node内部连接线。 
 In 1972, Rudolf Bayer[5] invented a data structure that was a special order-4 case of a B-tree. These trees maintained all paths from root to leaf with the same number of nodes, creating perfectly balanced trees. However, they were not binary search trees. Bayer called them a "symmetric binary B-tree" in his paper and later they became popular as 2–3–4 trees or just 2–4 trees
 
 as 2–3–4 trees
@@ -1606,4 +1608,31 @@ Nodes store 1, 2, or 3 keys and have
 这就是红黑树存在的意义，既有BST的标准搜索过程，又有2-3-4树的简单插入平衡过程。
 
 10,85,15,70,20,60,30,50,65,80,90,40,5 and 55
+
+The original algorithm used 8 unbalanced cases, but Cormen et al. (2001) reduced that to 6 unbalanced cases.[3] Sedgewick showed that the insert operation can be implemented in just 46 lines of Java code.[13][14] In 2008, Sedgewick proposed the left-leaning red–black tree, leveraging Andersson’s idea that simplified the insert and delete operations. Sedgewick originally allowed nodes whose two children are red, making his trees more like 2–3–4 trees, but later this restriction was added, making new trees more like 2–3 trees. Sedgewick implemented the insert algorithm in just 33 lines, significantly shortening his original 46 lines of code
+一开始是用24树实现， 后来用23树实现。 
+
+ Do know how to do B-tree insertions and searches.
+● You can derive these easily if you remember to split 
+nodes.
+● Do remember the rules for red/black trees and B-trees.
+● These are useful for proving bounds and deriving results.
+● Do remember the isometry between red/black trees 
+and 2-3-4 trees.
+● Gives immediate intuition for all the red/black tree 
+operations.
+● Don't memorize the red/black rotations and color flips.
+● This is rarely useful. If you're coding up a red/black tree, 
+just flip open CLRS and translate the pseudocode.
+不用记住如何反转， 去抄去吧
+```
+
+
+
+## dynamic selection
+```
+Dynamic Selection
+● The selection problem is the following:
+Given a list of distinct values and a number k, 
+return the kth-smallest value.
 ```
