@@ -41,6 +41,27 @@ We recommend that all students have prior experience with Unix, and at least wit
 ```
 
 
+## princeton
+```
+cos226
+```
+
+## princeton: Paths Through the Major --- Systems Focused
+```
+COS 126	Computer Science: An Interdisciplinary Approach
+COS 217	Introduction to Programming Systems
+COS 333	Advanced Programming Techniques	R. Dondero
+COS 226	Algorithms and Data Structures	
+COS 240	Reasoning About Computation
+COS 461	Computer Networks
+COS 484	Natural Language Processing
+COS 318	Operating Systems	
+COS 445	Economics and Computing
+COS 432	Information Security
+COS 418	Distributed Systems
+COS 424	Fundamentals of Machine Learning
+```
+
 ## references
 ```
 Course Contents
@@ -1583,4 +1604,6 @@ Nodes store 1, 2, or 3 keys and have
 2, 3, or 4 children,
 
 这就是红黑树存在的意义，既有BST的标准搜索过程，又有2-3-4树的简单插入平衡过程。
+
+10,85,15,70,20,60,30,50,65,80,90,40,5 and 55
 ```
