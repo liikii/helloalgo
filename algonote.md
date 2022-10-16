@@ -1635,4 +1635,30 @@ Dynamic Selection
 ● The selection problem is the following:
 Given a list of distinct values and a number k, 
 return the kth-smallest value.
+用红黑树解决。 
 ```
+
+## amortized analysis
+```
+Key Idea: Design data structures that trade per-operation efficiency for overall efficiency.
+Key Idea: Design data structures that 
+trade per-operation efficiency for
+overall efficiency.
+```
+
+
+## dynamic array
+```
+A dynamic array is the most common way to implement a list of values.
+Maintain an array slightly bigger than the one 
+you need. When you run out of space, double 
+the array size and copy the elements over.
+```
+
+
+## binomial heaps
+```
+每项个数都是2的k次方。 和加法一样合并。 
+```
+
+
