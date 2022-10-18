@@ -1821,3 +1821,130 @@ Count-Min Sketch 就是用来解决此类问题的算法。
 那么，要查询某个元素的频率时，返回这个元素在不同数组中的计数值中的最小值即可。
 ```
 
+
+
+## Range Searching 
+```
+
+```
+
+## 2d band searching , orthogonal range search 
+```
+● Store each point in two 
+arrays, one sorted by x
+coordinates and one sorted 
+by y coordinates.
+● Use a binary search to find 
+the first point in each 
+array that’s purely within 
+the x and y bands.
+● Use linear scans in each 
+array to find all the points 
+within the the x and y 
+bands.
+● Return the intersection of 
+the points found this way.
+
+
+Why Is This Slow?
+● Enumerating all the points in the correct y band is slow – many of them 
+won’t match.
+● Testing all the points individually in the correct y band is slow; there 
+are spatial correlations we aren’t taking advantage of.
+● Goal 1: Don’t explicitly list all the points found in the y range. (Ideally, 
+only list ones that match.)
+● Goal 2: Don’t explicitly test all the points found in the y range. (Ideally, 
+use some kind of sorting to exclude many of them)
+
+
+Blocking Revisited
+● Query step:
+● Do a binary search in the x direction to see which blocks 
+to check.
+● For each boundary block, do a linear scan within that 
+block to find all points in the query box.
+● Within each internal block, do a binary search to find all 
+points within the y range.
+
+key idea:
+
+ Adding layers 
+with larger block sizes 
+reduces the number of 
+binary searches we need to 
+do, speeding up the search
+```
+
+### Fáry’s theorem
+```
+● Fáry’s theorem says that every 
+plane graph can be redrawn as 
+a straight line plane graph
+```
+
+
+### When working with plane graphs, often the faces are more important than the vertices
+
+
+## planar point location
+```
+让某个点位于那个平面里。 
+naive solution:
+ What would the “no 
+preprocessing” solution 
+to this problem look 
+like?
+● Basic idea: Iterate over 
+all closed faces and see 
+if the point is in any of 
+them. If so, return it. If 
+not, return the external 
+face.
+● Faces in planar 
+subdivisions can 
+have irregular 
+shapes.
+● Simply testing if a 
+point is in such a 
+polygon seems 
+challenging!
+● However, there’s a 
+really clever way to 
+solve this problem.
+
+Each line crossed toggles whether we’re outside or
+inside the polygon. inside the polygon.
+Suppose we cross k line
+segments. If 
+k is even,
+the point is outside. If k is odd, it’s inside
+
+Slab Decomposition：
+以点切平面， 分块做检测， 
+● Idea: Draw a vertical line 
+through each line segment 
+endpoint to cut the space 
+into slabs.
+● Each slab consists of some 
+number of line segments, 
+which can be ordered from 
+top to bottom.
+● We can then solve point 
+location in time O(log n)
+by binary searching in the 
+x direction to find which 
+slab we’re in, then binary 
+searching in the y direction 
+to see which face we’re in.
+
+Building Slabs
+● Sort vertices from left to right, grouping 
+vertices with equal x coordinates together.
+● Create an initial, empty slab.
+● For each distinct x coordinate, from left to right:
+● Copy the previous slab.
+● Delete all segments that end at this x coordinate.
+● Add all segments that start at this x coordinate, 
+keeping segments sorted from top to bottom.
+
+```
