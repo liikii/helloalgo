@@ -1658,7 +1658,166 @@ the array size and copy the elements over.
 
 ## binomial heaps
 ```
+Lazy Binomial Heap
 每项个数都是2的k次方。 和加法一样合并。 
+Binomial Heap
+● enqueue: O(log n)
+● find-min: O(log n)
+● extract-min: O(log n)
+● meld: O(log m + log n).
 ```
 
+## lazy binomial heap
+```
+Idea:	
+be lazy, procrastinate, and leave the work for later
+a (lazy) binomial heap is again a list of binomial trees Bk
+when melding two heaps, just link them (note that we may get multiple trees Bk with the same order k)
+the real work is only done during extract-min, which is followed by a clean-up
+during the clean-up, we gradually link trees of the same order until we end up with at most one Bk tree for each k
+```
+
+
+## Fibonacci heap
+```
+```
+
+
+## cuckoo hashing 
+```
+Randomization is a powerful tool for 
+improving efficiency and solving problems 
+under seemingly impossible constraints
+All hash tables have to deal with 
+hash collisions in some way.
+● There are three general ways to 
+do this:
+ Closed addressing: Store all 
+colliding elements in an auxiliary 
+data structure like a linked list or 
+BST. (For example, standard 
+chained hashing.)
+● Open addressing: Allow elements 
+to overflow out of their target 
+bucket and into other spaces. (For 
+example, linear probing hashing.)
+● Perfect hashing: Do something 
+clever with multiple hash functions 
+to eliminate collisions.
+
+● The Rule: Any item x
+must either be at 
+position h₁(x) or 
+position h₂(x) in the 
+table.
+● Lookups take worstcase O(1) time, since 
+only two locations need 
+to be checked.
+● Deletions take worstcase O(1) time, since 
+only two locations need 
+to be checked.
+● To insert x into the 
+table, first try placing it 
+at slot h₁(x).
+● If that slot is full, kick 
+out the element y that 
+used to be in that slot 
+and try placing it the 
+other slot it can belong 
+to (either h₁(y) or 
+h₂(y)).
+● Repeat this process 
+until all elements 
+stabilize.
+
+● An insertion fails if the 
+displacements form an 
+infinite cycle.
+● If that happens, 
+perform a rehash by 
+choosing a new h₁ and 
+h₂ and inserting all 
+elements back into the 
+table.
+ Show that insertions take expected 
+time O(1), under the assumption that
+n = αm for some α < ½.
+减少冲突， 得改进空间
+● A cuckoo hash table with n elements 
+requires a table of size n / α, with α < ½.
+● This means at least 50% of the table slots 
+will be empty.
+● The root cause is a fundamental property 
+of random graphs; exceeding this 
+threshold makes failure almost certain.
+● Question: How can we push past this to 
+improve cuckoo hashing space usage?
+
+ We now have three ideas for improving 
+our basic cuckoo hash table.
+● Idea 1: Use multiple hash functions to give 
+items more wiggle room about where to go.
+● Idea 2: Don’t place all items in the table; let 
+some of them go somewhere else.
+● Idea 3: Allow for multiple items to be placed 
+in each slot.
+● Cuckoo hashing is a fast and powerful way to 
+build perfect hash tables.
+● We can increase the number of hash 
+functions to increase the load factor, though 
+at a cost to lookup and insert times.
+● We can use a stash to hold “meddlesome” 
+items, which increases the likelihood that the 
+table can be built.
+● We can increase the number of items per slot 
+to increase the load factor, though at a cost 
+to lookup and insert times
+
+```
+
+## cuckoo graph
+```
+???
+What is the probability that
+a connected component in the
+cuckoo graph is complex?
+(This lets us see how much time we should
+expect to spend rehashing.)
+How big are the connected 
+components in the cuckoo graph
+```
+
+## bloom filter 
+```
+如果想要判断一个元素是不是在一个集合里，一般想到的是将所有元素保存起来，然后通过比较确定。链表，树等等数据结构都是这种思路. 但是随着集合中元素的增加，我们需要的存储空间越来越大，检索速度也越来越慢(O(n),O(logn))。不过世界上还有一种叫作散列表（又叫哈希表，Hash table）的数据结构。它可以通过一个Hash函数将一个元素映射成一个位阵列（Bit array）中的一个点。这样一来，我们只要看看这个点是不是1就可以知道集合中有没有它了。这就是布隆过滤器的基本思想。
+Hash面临的问题就是冲突。假设Hash函数是良好的，如果我们的位阵列长度为m个点，那么如果我们想将冲突率降低到例如 1%, 这个散列表就只能容纳m / 100个元素。显然这就不叫空间效率了（Space-efficient）了。解决方法也简单，就是使用多个Hash，如果它们有一个说元素不在集合中，那肯定就不在。如果它们都说在，虽然也有一定可能性它们在说谎，不过直觉上判断这种事情的概率是比较低的。
+```
+
+
+## Frequency Estimators
+```
+● Frequency estimation has many applications:
+● Search engines: Finding frequent search 
+queries.
+● Network routing: Finding common source and 
+destination addresses.
+```
+
+## Count–min sketch
+```
+Count-Min Sketch 就是用来解决此类问题的算法。
+这个算法的技巧是：不存储所有的不同的元素，只存储它们Sketch的计数。
+基本的思路是这样的：
+
+创建一个长度为 x 的数组，用来计数，初始化每个元素的计数值为 0；
+对于一个新来的元素，哈希到 0 到 x 之间的一个数，比如哈希值为 i，作为数组的位置索引；
+这是，数组对应的位置索引 i 的计数值加 1；
+那么，这时要查询某个元素出现的频率，只要简单的返回这个元素哈希望后对应的数组的位置索引的计数值即可。
+考虑到使用哈希，会有冲突，即不同的元素哈希到同一个数组的位置索引，这样，频率的统计都会偏大。
+
+如何优化？
+
+使用多个数组，和多个哈希函数，来计算一个元素对应的数组的位置索引；
+那么，要查询某个元素的频率时，返回这个元素在不同数组中的计数值中的最小值即可。
+```
 
