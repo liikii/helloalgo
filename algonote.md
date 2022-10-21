@@ -62,6 +62,87 @@ COS 418	Distributed Systems
 COS 424	Fundamentals of Machine Learning
 ```
 
+
+## berkeley what's next
+```
+What’s Next (Course-Wise)?
+CS61B: (conventional) data structures, statically typed production
+languages.
+CS61C: computing architecture and hardware as programmers see it.
+CS70: Discrete Math and Probablilty Theory.
+CSC100: Data Science
+CS170, CS171, CS172, CS174: “Theory”—analysis and construction of
+algorithms, cryptography, computability, complexity, combinatorics,
+use of probabilistic algorithms and analysis.
+CS161: Security
+CS162: Operating systems.
+CS164: Implementation of programming languages
+CS168: Introduction to the Internet
+CS160, CS169: User interfaces, software engineering
+CS176: Computational Biology
+What’s Next (Course-Wise)?
+CS182, CS188, CS189: Neural networks, Artificial intelligence, Machine
+Learning
+CS184: Graphics
+CS186: Databases
+CS191: Quantum Computing
+CS195: Social Implications of Computing
+EECS 16A, 16B: Designing Information Systems and Devices
+EECS 126: Probabilty and Random Processes
+EECS149: Embedded Systems
+EECS 151: Digital Design
+CS194: Special topics. (E.g.) computational photography and image
+manipulation, cryptography, cyberwar.
+Plus graduate courses on these subjects and more.
+And please don’t forget CS199 and research projects.
+There’s Also Electrical Engineering
+EE105: Microelectronic Devices and Circuits.
+EE106: Robotics
+EE118, EE134: Optical Engineering, Photovotalaic Devices.
+EE120: Signals and Systems.
+EE123: Digital Signal Processing.
+EE126: Probability and Random Processes.
+EE130: Integrated Circuit Devices.
+EE137A: Power Circuits.
+EE140: Linear Integrated Circuits (analog circuits, amplifiers).
+EE142: Integrated Circuits for Communication.
+EE143: Microfabrication Technology.
+EE147: Micromechanical Systems (MEMS).
+EE192: Mechatronic Design.
+What's next? (Otherwise)
+Programming contests
+Hackathons
+More paradigms and languages: the web
+The open-source world: Go out and build something!
+Above all: Have fun!
+```
+
+
+## what can do with python
+```
+What can you do with Python?
+Almost anything!
+Webapp backends
+Web scraping
+Natural Language Processing
+Data analysis
+Machine Learning
+Scientific computing
+Games(Pygame)
+Procedural generation - L Systems, Noise, Markov
+*Except you should be careful when you use recursion...
+Thanks to libraries!
+(Flask, Django)
+(BeautifulSoup)
+(NLTK)
+(Numpy, Pandas, Matplotlib)
+(FastAi, PyTorch, Keras)
+(
+	SciPy
+```
+
+
+
 ## references
 ```
 Course Contents
